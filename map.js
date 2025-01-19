@@ -94,9 +94,8 @@ const bridges = [
           <div class="popup-image" style="background-image: url(${bridge.image});"></div>
           <div class="popup-content">
               <h3>${bridge.name}</h3>
-              <p><strong>Location:</strong> ${bridge.location}</p>
-              <p><strong>Year:</strong> ${bridge.year}</p>
-              <p><strong>Type:</strong> ${bridge.bridgeType}</p>
+              <p><strong>Year built:</strong> ${bridge.year}</p>
+              <p><strong>Bridge type:</strong> ${bridge.bridgeType}</p>
           </div>
       </div>
     `;
