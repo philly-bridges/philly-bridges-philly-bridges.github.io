@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="description" />
+    <title>Philly Bridges</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="map.css" />
+    <link rel="stylesheet" href="bridges.css" />
+    <link rel="stylesheet" href="history.css" />
+    <link rel="stylesheet" href="current.css" />
+    <link rel="stylesheet" href="resources.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" aria-label="Homepage">
+                <button class="logo" aria-label="Homepage"></button>
+            </a>
+            <div class="nav-items">
+                <ul>
+                    <li><a href="#map">Map</a></li>
+                    <li><a href="#bridges">Bridges</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#current">Current</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </div>
+            <div class="contact-btn">
+                <button class="contact-btn" onclick="window.open('reflection.html', '_blank')">Reflection</button>
+            </div>
+                <button class="menu-icon" aria-label="Toggle menu">
+                <span class="visually-hidden">Toggle menu</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000">
+                    <path d="M280-600v-80h560v80H280Zm0 160v-80h560v80H280Zm0 160v-80h560v80H280ZM160-600q-17 0-28.5-11.5T120-640q0-17 11.5-28.5T160-680q17 0 28.5 11.5T200-640q0 17-11.5 28.5T160-600Zm0 160q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520q17 0 28.5 11.5T200-480q0 17-11.5 28.5T160-440Zm0 160q-17 0-28.5-11.5T120-320q0-17 11.5-28.5T160-360q17 0 28.5 11.5T200-320q0 17-11.5 28.5T160-280Z" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <div class="overlay"></div>
+    <aside class="sidebar">
+        <button class="close-btn" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </button>
+        <button class="logo-sidebar">
+            <img src="images/blacklogo.png" alt="Bridges Logo" width="200" height="58" />
+        </button>
+        <ul class="sidebar-menu">
+            <li><a href="#map">Map</a></li>
+            <li><a href="#bridges">Bridges</a></li>
+            <li><a href="#history">History</a></li>
+            <li><a href="#current">Current</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+        <div class="divider"></div>
+        <button class="contact-black" onclick="window.open('reflection.html', '_blank')">Reflection</button>
+    </aside>
+
+    <div class="sections">
+
+        <section id="map" class="box white">
+            <div id="map"></div>
+        </section>
+        
+        <section id="bridges" class="box1 black">
+            <div class="bridges-intro-text">
+                <h2>What is a Bridge?</h2>
+                <p>In the Merriam Webster dictionary, the term “bridge” is first defined as “a structure carrying a pathway or roadway over a depression or obstacle (such as a river)”. Bridges are made out of different materials such as concrete, iron, stone, wood, and others. Bridges come in many different shapes and sizes and there are many different types of bridges. Here are some:</p>
+            </div>        
+            <div class="bridge-types-container">
+                <div class="bridge-type">
+                    <img src="images/beamBridge.png" alt="Beam Bridge" class="bridge-image">
+                    <div class="bridge-info">
+                        <h2>Beam Bridge</h2>
+                        <p>Most common type of bridge, has a beam that crosses a span. When there is a vertical force such as a car driving across it bends and gets compressed above but this is happening while the bottom is in tension so the force is carried to the foundations underneath and is very structurally stable.</p>
+                        <p><strong>Example:</strong> JFK Boulevard Bridge, Philadelphia</p>
+                    </div>
+                </div>
+    
+                <div class="bridge-type">
+                    <img src="images/trussBridge.png" alt="Truss Bridge" class="bridge-image">
+                    <div class="bridge-info">
+                        <h2>Truss Bridge</h2>
+                        <p>Also bends like beam bridge, has diagonal and or vertical members also and they are very popular because of cheap cost due to not using much material and high strength.</p>
+                        <p><strong>Example:</strong> Betsy Ross Bridge, Philadelphia</p>
+                    </div>
+                </div>
+    
+                <div class="bridge-type">
+                    <img src="images/archBridge.png" alt="Arch Bridge" class="bridge-image">
+                    <div class="bridge-info">
+                        <h2>Arch Bridge</h2>
+                        <p>Compression supports the load and force is distributed to the foundation, which needs to be able to support vertical and horizontal forces. Its oftentimes less materials then beam bridges spanning the same distance.</p>
+                        <p><strong>Example:</strong> Wissahickon Memorial Bridge, Philadelphia</p>
+                    </div>
+                </div>
+    
+                <div class="bridge-type">
+                    <img src="images/suspensionBridge.png" alt="Suspension Bridge" class="bridge-image">
+                    <div class="bridge-info">
+                        <h2>Suspension Bridge</h2>
+                        <p>Carries load with curved cables that are under tension. The loads are transferred to anchorages and towers. It can be thought of somewhat as a upside down arch design where the arch is in tension and the towers are under compression.</p>
+                        <p><strong>Example:</strong> Benjamin Franklin Bridge, Philadelphia</p>
+                    </div>
+                </div>
+    
+                <div class="bridge-type">
+                    <img src="images/cantileverBridge.png" alt="Cantilever Bridge" class="bridge-image">
+                    <div class="bridge-info">
+                        <h2>Cantilever Bridge</h2>
+                        <p>Usually made out of three spans, two anchored and one in the center. There is compression in the top chords and the bottom middle span. The bottom and top middle span are under tension.</p>
+                        <p><strong>Example:</strong> Forth Bridge, Scotland</p>
+                    </div>
+                </div>
+    
+                <div class="bridge-type">
+                    <img src="images/cableStayedBridge.png" alt="Cable-Stayed Bridge" class="bridge-image">
+                    <div class="bridge-info">
+                        <h2>Cable-Stayed Bridge</h2>
+                        <p>Diagonal cables under tension carry the load and transfer forces into towers.</p>
+                        <p><strong>Example:</strong> Sunshine Skyway Bridge, Florida</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="history" class="box white">
+            <div class="history-intro-text">
+                <h2>Historic Bridges</h2>
+                <p> Philadelphia is old and has a long history of infrastructure including old bridges. Here are two notable ones stories:</p>
+            </div>        
+            <div class="history-container">
+                <div class="history-item">
+                    <div class="history-image">
+                        <img src="images/benjaminFranklin.png" alt="Benjamin Franklin Bridge" />
+                    </div>
+                    <div class="history-text">
+                        <h2>Benjamin Franklin Bridge</h2>
+                        <p>The Benjamin Franklin bridge is a suspension bridge that goes across the Delaware river and connects Philadelphia to Camden, New Jersey. It was built in the 1920s and was opened in 1926. It was not originally named what people call it now, it used to be the Delaware River Port Authority Bridge. It was designed by Paul Philippe Cret. The Benjamin Franklin bridge has a length of 9,650 feet. It also has a walkway for pedestrians. The Benjamin Franklin bridge was very important for connecting the communities of Philly and Camden and additionally helped both places' economies. It is still in existence and used a lot today, an estimated 100,000 cars go over it every day which is a LOT.</p>
+                    </div>
+                </div>
+        
+                <div class="history-item">
+                    <div class="history-image">
+                        <img src="images/waltWhitman.png" alt="Walt Whitman Bridge" />
+                    </div>
+                    <div class="history-text">
+                        <h2>Walt Whitman Bridge</h2>
+                        <p>The Walt Whitman Bridge is a suspension bridge. It too connects Philly to New Jersey similarly to the Benjamin Franklin Bridge. It was built in the 1950s and opened in 1957. It is 11,982 feet long which is somewhat longer than the Benjamin Franklin bridge. It was named after Walt Whitman who was a poet. Around 120,000 to 150,000 (in the summer usually) cars drive across it each day. The bridge is important for connecting communities and remembering the person it was named after. If going west on this bridge there is a 5 dollar toll which is one dollar cheaper than the Benjamin Franklin Bridge toll which is 6 dollars.</p>
+                    </div>
+                </div>
+                </div>
+        </section>
+        
+        <section id="current" class="box black">
+                <div class="current-intro-text">
+                    <h2>Bridges Are More Than Just Structures</h2>
+                    <p>In the Merriam Webster dictionary, the term “bridge[‘s]” second definition is “a time, place, or means of connection or transition.” Thousands of cars cross Philadelphia’s many bridges each day. There are 591 bridges in Philadelphia. Bridges bring people to work, to friends and family, to home, and many other places. Bridges allow for easier travel and more connection between places that were once at a greater degree of separation. However, bridges can also hurt communities, namely when they are damaged.</p>
+                </div>
+                <div class="current-item">
+                    <div class="current-image">
+                    <img src="images/i95.png" alt="i95 Collapse" />
+                </div>
+                <div class="current-text">
+                    <h2>Bridge Conditions</h2>
+                    <p>Because of Philadelphia’s history, many of its things are old. This also applies to its bridges. With age, we can often also see deteriorating infrastructure. 14% of PA's 3,901 bridges are rated in poor condition. This affects over 4.5 million vehicles that cross them each day. A "poor" rating doesn’t mean necessarily the bridge will collapse immediately, but means there's some significant deterioration in important parts, that calls for ongoing inspections and repairing. Since 2008, Pennsylvania has reduced its poor bridge ratings by over 50%. This was and continues to be helped by funding for example the $1.5 trillion federal Infrastructure Act that gives PA  $1.6 billion each year bridge repair money. People are working on new technology and sensors to better measure the safety of bridges to avoid tragic accidents. In 2023 there was a collapse of the Interstate 95 highway. It was caused by an incident with a truck. This collapse showed the importance of keeping up with aging infrastructure. Even though it was repaired eventually the process took a long time and impacted traffic and the economy of Philly. It is quicker to reinforce bridges than to completely rebuild them. </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="box white">
+            <div class="resources-container">
+                <h2>Resources</h2>
+                <p>Here are some additional resources to learn more about bridges, as well as some of the sources that were used for the researching of this project:</p>
+                <ul class="resources-list">
+                    <li><a href="https://www.merriam-webster.com/dictionary/bridge" target="_blank">Bridge - Merriam-Webster</a></li>
+                    <li><a href="https://www.britannica.com/technology/bridge-engineering" target="_blank">Bridge Engineering - Britannica</a></li>
+                    <li><a href="https://usbridge.com/the-economic-benefits-of-bridge-building/" target="_blank">Economic Benefits of Bridge Building - U.S. Bridge</a></li>
+                    <li><a href="https://www.loc.gov/item/pa3584/?q=Philadelphia+" target="_blank">Philadelphia Bridges - Library of Congress</a></li>
+                    <li><a href="https://philadelphiaencyclopedia.org/essays/bridges/" target="_blank">Bridges of Philadelphia - Philadelphia Encyclopedia</a></li>
+                    <li><a href="https://www.ushistory.org/franklin/philadelphia/bridge.htm" target="_blank">Franklin Bridge - U.S. History</a></li>
+                    <li><a href="https://www.drpa.org/bridges/walt-whitman-bridge.asp" target="_blank">Walt Whitman Bridge - Delaware River Port Authority</a></li>
+                    <li><a href="https://blog.phillyhistory.org/index.php/2019/06/naming-bridges-in-the-1950s-benjamin-franklin-and-walt-whitman/" target="_blank">Naming Bridges in the 1950s: Benjamin Franklin and Walt Whitman - Philly History</a></li>
+                    <li><a href="https://bridgemastersinc.com/neglected-infrastructure/" target="_blank">Neglected Infrastructure - Bridge Masters</a></li>
+                    <li><a href="https://tripnet.org/reports/preserving-pennsylvanias-bridges-philadelphia-news-release-06-20-2024/#:~:text=Philadelphia%2C%20PA%20%E2%80%93%20Fourteen%20percent%20of,poor%20area%20bridges%20each%20day." target="_blank">Preserving Pennsylvania's Bridges - TRIP</a></li>
+                    <li><a href="https://www.constructionequipmentguide.com/many-philadelphia-area-bridges-are-crumbling-so-should-drivers-be-worried/55861" target="_blank">Crumbing Bridges in Philadelphia - Construction Equipment Guide</a></li>
+                </ul>
+            </div>
+        </section>
+                
+    </div>
+
+    <script src="script.js"></script>
+    <script src="map.js"></script>
+
+</body>
+</html> 
