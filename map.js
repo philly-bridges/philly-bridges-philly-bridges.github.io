@@ -32,7 +32,7 @@ const bridges = [
       bridgeType: "Arch"
     },
     {
-      image: "images/jfkBoulevard.png",
+      image: "images/JFKBoulevard.png",
       name: "JFK Boulevard Bridge",
       coordinates: [39.9519, -75.1650],
       location: "Philadelphia, PA",
